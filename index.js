@@ -5,6 +5,7 @@ var bookController = require('./server/controllers/books_controller');
 var app = express();
 //USE body parser
 app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public/build'));
 
 app.get('/api/books', bookController.read);
 app.get('/api/books/:id', bookController.readById);
